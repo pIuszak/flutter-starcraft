@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
+// import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:google_sign_in/google_sign_in.dart';
+
+// final GoogleSignIn googleSignIn = GoogleSignIn();
+
 
 void main() {
   runApp(MyApp());
 }
 
+
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+
+
+  // This widget is the root of your application.ś
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,6 +25,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MyHomePage(title: 'Join Raynor\'s Raiders'),
+      //home: GetUserName("Raynor"),
     );
   }
 }
@@ -42,6 +51,20 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
+  String name, surname, unitType;
+
+  getName(name) {
+    this.name = name;
+  }
+
+  getSurname(surname) {
+    this.surname = surname;
+  }
+
+  getUnitType(unitType) {
+    this.unitType = unitType;
+  }
+
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -63,45 +86,90 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
       body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
         child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
+            TextField(
+              decoration: InputDecoration(hintText: "Name"),
+              onChanged: (String name) {
+                getName(name);
+              },
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            TextField(
+              decoration: InputDecoration(hintText: "Surname"),
+              onChanged: (String surname) {
+                getSurname(surname);
+              },
             ),
+            TextField(
+              decoration: InputDecoration(hintText: "Unit Type"),
+              onChanged: (String unitType) {
+                getUnitType(unitType);
+              },
+            ),
+            Padding(padding: EdgeInsets.all(25.0)),
+            RaisedButton(color: Colors.green,
+                child: Text("Create"),
+                onPressed: () {
+                  createData();
+                }),
+            RaisedButton(color: Colors.blue,
+                child: Text("Read"),
+                onPressed: () {
+                  readData();
+                }),
+            RaisedButton(color: Colors.orangeAccent,
+                child: Text("Update"),
+                onPressed: () {
+                  updateData();
+                }),
+            RaisedButton(color: Colors.red,
+                child: Text("Delete"),
+                onPressed: () {
+                  deleteData();
+                })
+
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+
+
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: _incrementCounter,
+      //   tooltip: 'Increment',
+      //   child: Icon(Icons.add),
+      // ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+
+  void createData() {
+    print("createData");
+  }
+
+  void readData() {
+    // print("readData");
+    // DocumentReference documentReference = Firestore.instance.collection("Users")
+    //     .document("Raynor");
+    // documentReference.get().then((datasnapshot){
+    //   print(datasnapshot.data);
+    //
+    // });
+  }
+
+  void updateData() {
+    print("updateData");
+  }
+
+  void deleteData() {
+    print("deleteData");
+  }
 }
+
+
+
+
+
+
