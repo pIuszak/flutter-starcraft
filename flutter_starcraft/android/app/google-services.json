@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "271152106701",
+    "firebase_url": "https://flutter-starcraft.firebaseio.com",
+    "project_id": "flutter-starcraft",
+    "storage_bucket": "flutter-starcraft.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:271152106701:android:79eddb63b3d5947462ad84",
+        "android_client_info": {
+          "package_name": "com.pluszak.flutterstarcraft.flutter_starcraft"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "271152106701-irfqvg8bmgcso33oabqr9v57hppkcmjq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1nnVAa5tGQt_pOKV-3PjCrduebB6OfbI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "271152106701-irfqvg8bmgcso33oabqr9v57hppkcmjq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "271152106701-1kgdvmlr6br63eplr6lau5llh9ibs4lu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterstarcraft"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

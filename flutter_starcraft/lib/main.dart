@@ -1,14 +1,14 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-// import 'package:cloud_firestore/cloud_firestore.dart';
-// import 'package:google_sign_in/google_sign_in.dart';
 
 // final GoogleSignIn googleSignIn = GoogleSignIn();
 
 
-void main() {
+ void main() async{
+ WidgetsFlutterBinding.ensureInitialized();
+ await Firebase.initializeApp();
   runApp(MyApp());
 }
-
 
 class MyApp extends StatelessWidget {
 
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.red,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Join Raynor\'s Raiders'),
+      home: MyHomePage(title: ' --- Join Raynor\'s Raiders ---'),
       //home: GetUserName("Raynor"),
     );
   }
